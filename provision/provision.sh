@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+mkdir /home/vagrant/www
+
 echo "Configuring Nginx"
     cp /home/vagrant/provision/grav.com /etc/nginx/sites-available/grav.com > /dev/null
     
