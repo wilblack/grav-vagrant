@@ -3,7 +3,7 @@ server {
     index index.html index.php;
 
     ## Begin - Server Info
-    root /home/vagrant/grav/grav-admin;
+    root /home/vagrant/grav/www;
     server_name localhost;
     ## End - Server Info
 
@@ -41,4 +41,3 @@ server {
     location ~ /(LICENSE.txt|composer.lock|composer.json|nginx.conf|web.config|htaccess.txt|\.htaccess) { return 403; }
     ## End - Security
 }
-
