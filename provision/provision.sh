@@ -1,12 +1,13 @@
 #!/bin/bash
 
 
+PROJECT_DIR=/home/vagrant/grav
 WWW_DIR=/home/vagrant/grav/www
 NGINX_CONFIG=/etc/nginx/sites-enabled/grav.com
 FOUNDATION_DIR=/home/vagrant/grav/foundation
 
 
-sudo apt-get install gunzip -y 
+sudo apt-get install unzip -y 
 
 if [ -d "$WWW_DIR" ]; then 
   echo "$WWW_DIR already exists so removing it"
@@ -27,9 +28,9 @@ fi
 #echo "Cloning the Foundation repo to $WWW_DIR"
 #git clone https://github.com/illumiphi/grav-order-skeleton.git $WWW_DIR
 
-wget -O grav-admin.zip https://github.com/getgrav/grav/releases/download/1.1.8/grav-admin-v1.1.8.zip
-unzip grav-admin.zip
-mv grad-admin www
+wget -O $PROJECT_DIR/grav-admin.zip https://github.com/getgrav/grav/releases/download/1.1.8/grav-admin-v1.1.8.zip
+unzip $PROJECT_DIR/grav-admin.zip -d $PROJECT_DIR
+mv $PROJECT_DIR/grav-admin $PROJECT_DIR/www
 
 echo "Configuring Nginx"
     cp /home/vagrant/grav/provision/templates/grav.com /etc/nginx/sites-available/grav.com > /dev/null
