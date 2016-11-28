@@ -11,5 +11,5 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8081
   config.vm.synced_folder ".", "/home/vagrant/grav"
 
-  config.vm.provision :shell, :path => "scripts/provision.sh", :privileged => true
+  config.vm.provision :shell, :path => "provision/provision.sh", :privileged => true
 end
