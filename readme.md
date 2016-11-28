@@ -1,6 +1,3 @@
-
-
-
 # Install
 
 1. Create a directory
@@ -13,11 +10,7 @@
     git clone https://github.com/wilblack/grav-vagrant.git
 
 
-3. vagrant up
+3. `vagrant up` This takes a while. If everything works you should be able to navigate to the `localhost:8081` and it should give you the user creation screen.
 
-4. vagrant ssh
+To get into the Vagrant box use `vagrant ssh`
 
-5. cp grav.com /etc/nginx/sites-available/.
-6. ln -s /etc/nginx/sites-available/grav.com /etc/nginx/sites-available/gave.com
-
-7. rm /etc/nginx/sites-enabled/default
