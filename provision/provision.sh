@@ -32,6 +32,9 @@ wget -O $PROJECT_DIR/grav-admin.zip https://github.com/getgrav/grav/releases/dow
 unzip $PROJECT_DIR/grav-admin.zip -d $PROJECT_DIR
 mv $PROJECT_DIR/grav-admin $PROJECT_DIR/www
 
+echo "Adding an admin user"
+bin/plugin login newuser -u admin -e admin@illumiphi.com -p Admin1234 -P b -N "Site Admin" -t "Site Administrator" 
+
 echo "Configuring Nginx"
     cp /home/vagrant/grav/provision/templates/grav.com /etc/nginx/sites-available/grav.com > /dev/null
     
@@ -49,6 +52,8 @@ echo "Configuring Nginx"
     service nginx restart > /dev/null
 
 
+echo "You can browse to locahost:8081 to see your new site"
+echo "You can login with user: admin pwd: Admin1234"
 
 
 
