@@ -40,4 +40,10 @@ server {
     # deny access to specific files in the root folder
     location ~ /(LICENSE.txt|composer.lock|composer.json|nginx.conf|web.config|htaccess.txt|\.htaccess) { return 403; }
     ## End - Security
+
+    # This disables the caching problem during development
+    location ~* ^.+\.(js|css)$ {
+        expires -1;
+        sendfile off;
+    }
 }

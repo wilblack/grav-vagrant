@@ -15,10 +15,42 @@
 To get into the Vagrant box use `vagrant ssh`
 
 
+## NGINX
+Restart NGINX
+    sudo service nginx restart
 
 
 ## DEV NOTES
 
+
+
 Adding a new user without interaction
 
-bin/plugin login newuser -u admin -e admin@illumiphi.com -p admin -P b -N "Site Admin" -t "Site Administrator"
+bin/plugin login newuser -u admin -e admin@illumiphi.com -p Admin1234 -P b -N "Site Admin" -t "Site Administrator"
+
+
+## Getting SASS working
+First gem install SASS
+
+    scss --watch scss:css-compiled
+
+## Adding sub repos
+
+Inside this repo, make a folder do a 
+
+    git clone https://github.com/illumiphi/grav-order-foundation.git www
+    cd www 
+    git checkout develop
+
+Then add the following sub-folders
+
+    cd www
+    mkdir logs images assets user/data
+
+Then clone the pages repo to `www/user/pages`
+
+    cd user
+    git clone https://github.com/illumiphi/pages.git pages
+    git checkout develop
+
+
